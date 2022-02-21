@@ -11,6 +11,8 @@ My practice on the competitive programming website [Codeforces](https://codeforc
 - 1800 - 1900: 5, 6, 7, 8
 - 2000 - 2100: 9, 10, 11, 12
 
-## Goal
+## Goals
 
-Candidate master by CCC 2022.
+- Solve at least three problems every day
+  - [Consistency is key](https://docs.google.com/spreadsheets/d/1u7xLYMenat_fLTN39lVNujoDi89Amc9lsDzhSScRXxc/edit?usp=sharing)
+- Candidate master by CCC 2022
