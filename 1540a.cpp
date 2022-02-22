@@ -9,8 +9,9 @@ using namespace std;
 // d[v] - d[u]. The shortest path to go from 1 to u will go from
 // 1 -> node with largest d[i] value -> v. Every other edge will
 // remain unused in the shortest path because an edge from u -> v
-// must have an edge weight of <= d[v] - d[u], but will contribute
-// to the answer.
+// must have an edge weight of >= d[v] - d[u] (otherwise, there will
+// be a path from 1 to u with a total weight of less than the shortest
+// path d[u]), but will contribute to the total answer.
 
 
 void solve() {
