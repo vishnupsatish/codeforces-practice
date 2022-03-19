@@ -14,4 +14,4 @@ My practice on the competitive programming website [Codeforces](https://codeforc
 
 - Solve at least three problems every day
   - [Consistency is key](https://docs.google.com/spreadsheets/d/1u7xLYMenat_fLTN39lVNujoDi89Amc9lsDzhSScRXxc/edit?usp=sharing)
-- Candidate master by CCC 2022
+- Candidate master by CCC 2023
