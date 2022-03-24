@@ -9,8 +9,9 @@ using namespace std;
 // Idea: for y > x, the number y - (y % x) will be divisible by x. There is a
 // point between y - (y % x) (which is the greatest number divisible by x that
 // is not greater than y) and y such that the mods will be the same. That is
-// the number between largest multiple of x less than of equal to y and y (average
-// of that value), which will be the answer.
+// the number between largest multiple of x less than of equal to y (b) and y (average
+// of that value), which will be the answer, since the distance from the average to y
+// and the distance from the average to b will be the same.
 
 int main() {
   ios::sync_with_stdio(false);
