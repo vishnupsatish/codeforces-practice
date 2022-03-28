@@ -31,12 +31,10 @@ int main() {
     unordered_set<int> done;
     vector<int> ans(n);
     int cnt = 0;
-    unordered_set<int> not_satisfied;
     for (int i = 0; i < n; i++) {
       if (done.contains(a[i])) {
         ans[i] = *nums.begin();
         nums.erase(nums.begin());
-        not_satisfied.insert(i);
       } else {
         ans[i] = a[i];
         cnt++;
@@ -45,11 +43,7 @@ int main() {
     }
     for (int i = 0; i < n; i++) {
       if (ans[i] == i) {
-        if (idx[a[i]][0] == i) {
-          swap(ans[idx[a[i]][1]], ans[i]);
-        } else {
-          swap(ans[idx[a[i]][0]], ans[i]);
-        }
+        swap(ans[idx[a[i]][0]], ans[i]);
       }
     }
     cout << cnt << '\n';
