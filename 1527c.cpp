@@ -10,8 +10,9 @@ using namespace std;
 // dp for all i from 0 -> n - 1. Have a PSA for each value that sums that indices
 // that the values appeared up to the current index. dp[i] = dp[i - 1] + pref[a[i]] + 1
 // (0-indexed). Why? dp[i - 1] so we can find the answer for all values that are
-// not a[i]. pref[a[i]] + 1 so we can find the contribution of a[i] to the answer;
-// we take the indices so gaps on the ends of them are counted.
+// not a[i] and to find the answer of the subarrays that end at i - 1 (so we can 
+// also include its contribution). pref[a[i]] + 1 so we can find the contribution 
+// of a[i] to the answer; we take the indices so gaps on the ends of them are counted.
 
 int main() {
   ios::sync_with_stdio(false);
