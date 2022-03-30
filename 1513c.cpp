@@ -8,7 +8,11 @@ using namespace std;
 
 // Idea: utilize DP. dp[i] = length of string after performing i operations
 // on 10. dp[i] = 2, 3, or dp[i - 9] + dp[i - 10]. Then calculate the answer
-// for each digit in the string.
+// for each digit in the string. Why does this work? The first digit is one
+// ahead of the second, since 9 -> 10 -> 21, etc. After 9 operations, each digit
+// will have doubled to two digits, except the digits that are zeroes. The digits
+// that are zeroes will have been removed in the previous operations, so do
+// dp[i - 9] + dp[i - 10].
 
 const int md = (int) 1e9 + 7;
 
