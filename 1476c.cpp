@@ -31,15 +31,15 @@ int main() {
     dp[0][0] = (c[0] - b[1] + 1) + a[1];
     for (int i = 1; i < n; i++) {
       if (b[i] == a[i]) { // Need to start a new one
-        dp[i][0] = (c[i] - b[i + 1] + 1) + (a[i + 1]);
-        dp[i][1] = (c[i]);
+        dp[i][0] = (c[i] - b[i + 1] + 1) + a[i + 1];
+        dp[i][1] = c[i];
       } else {
         if (b[i + 1] != a[i + 1]) {
-          dp[i][0] = dp[i - 1][0] + (c[i] - b[i + 1] + 1) + (a[i + 1]);
+          dp[i][0] = dp[i - 1][0] + (c[i] - b[i + 1] + 1) + a[i + 1];
         } else {
           dp[i][0] = -1;
         }
-        dp[i][1] = dp[i - 1][0] + (c[i]);
+        dp[i][1] = dp[i - 1][0] + c[i];
       }
     }
     vector<long long> suf(n + 1);
