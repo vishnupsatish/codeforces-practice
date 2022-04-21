@@ -11,6 +11,11 @@ using namespace std;
 // to within that time. For the rest of the nodes, we can take the
 // one with the most siblings, inject those (everything else will go down
 // by one, that will go down by two), then use a set to simulate the process.
+// Why inject the one with the most siblings in the second step? Because
+// if we injected a one with less than the most siblings, in one step
+// we might inject into something, but we won't be able to spread it since
+// there are no more nodes, making one less node get the disease than if
+// we injected the one with the most siblings.
 
 int main() {
   ios::sync_with_stdio(false);
