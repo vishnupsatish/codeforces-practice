@@ -10,6 +10,10 @@ using namespace std;
 // p[r] - p[l - 1]. For the condition to be satisfied, p[r] - p[l - 1] ==
 // r - (l - 1). We can rearrange this to p[r] - r == p[l - 1] - (l - 1),
 // and store all occurrences of p[i] - i. Then, we can use handshake formula.
+// Why is it p[l - 1] - (l - 1)? Because what we get rid of (p[l - 1])
+// must be the same as p[r] (in terms of p[i] - i value), which shows that
+// what is kept has its sum equal to its length. The value of p[l] has no
+// bearing on that.
 
 int main() {
   ios::sync_with_stdio(false);
