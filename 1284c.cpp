@@ -9,10 +9,10 @@ using namespace std;
 // Idea: loop r - l (let that be 'i'). We know that i + 1 is the length of the
 // current sequence. A framed sequence must be a permutation of its length EXCEPT
 // its starting number can range anywhere from 1 to the length of the entire 
-// permutation - its length. We can therefore find all arrangements a framed 
+// permutation - i. We can therefore find all arrangements a framed 
 // sequence of length i + 1, find all arrangements of all of the other numbers
 // (using factorial), find all of the possible starting numbers (from 1 to n - i)
-// and all possible positions to place this framed sequence (from 1 to n - 1). 
+// and all possible positions to place this framed sequence (from 1 to n - i). 
 // Multiplying these gives the answer for a given r - l.
 
 long long memo[250010];
