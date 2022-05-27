@@ -9,7 +9,10 @@ using namespace std;
 // Key idea: some number of odd operations, some even. Odd can be increased (not even). 
 // Find the minimum value. I used gross formulas. (Differentiate, find that 2/3 * diff is 
 // the best thing to do, it is an absolute value function). Max or max + 1 is the best 
-// answer. Alternatively, binary searching for the answer can be used.
+// answer. Alternatively, binary searching for the answer can be used. Binary search as in
+// if mid is the answer, let ceil(mid/2) be the number of +1s and floor(mid/2) be the number
+// of +2s, greedily assign +2s then assign +1s for the rest. If there are any +1s or +2s
+// remaining, it's okay as we can just ignore that they exist.
 
 #define int long long
 
