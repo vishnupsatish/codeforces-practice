@@ -6,7 +6,9 @@
 
 using namespace std;
 
-// Idea: two diagonals; place ones in the first and twos in the second. If one of them runs out, either place the respective number in the other diagonal or a three in the other diagonal, based on the 'a' value.
+// Idea: two diagonals; place ones in the first and twos in the second. If one of them runs
+// out, either place the respective number in the other diagonal or a three in the other 
+// diagonal, based on the 'a' value.
 
 struct Position {
   int i;
