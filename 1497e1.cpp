@@ -6,7 +6,7 @@
 
 using namespace std;
 
-// a[i] = val[i] * greater square number that is a factor. If the 'val' value is the same for
+// a[i] = val[i] * greatest square number that is a factor. If the 'val' value is the same for
 // two numbers, then their product is a perfect square. Why? Each exponent in the prime
 // factorization must be even. So, the perfect square aspect is taken care of, while the other
 // number's factors have no prime factors that have an even exponent, so when they're multiplied
