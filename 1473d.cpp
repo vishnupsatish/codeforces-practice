@@ -10,7 +10,8 @@ using namespace std;
 // know are the max and the min values in each prefix and suffix in the query. Prefix
 // max/min is easy. For suffix max/min (taking the example of suffix max), we need to
 // prepand an operation instead of append, so we do m[i] = max(0, m[i + 1] + a[i]) 
-// since we have to add a[i] no matter what.
+// since we have to add a[i] no matter what. Suffix thing is similar to max subarray sum,
+// since we keep going as much as possible.
 
 int main() {
 #ifdef ONLINE_JUDGE
