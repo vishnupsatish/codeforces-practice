@@ -4,7 +4,9 @@ using namespace std;
 
 #define ll long long
 
-// Optimal idea is to bitwise OR only once. Why? Idk.
+// Optimal idea is to bitwise OR only once. Why? Because 'a' will become >= 'b' then. Also, we can 
+// loop our new value of 'a' up to the smallest submask of 'b', then OR, and do the same for 'b' so
+// we don't overshoot 'b'.
 
 
 void solve() {
