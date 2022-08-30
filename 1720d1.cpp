@@ -25,7 +25,7 @@ int main() {
     vector<int> dp(n); // max. length of subsequence that ends at i
     dp[0] = 1;
     for (int i = 1; i < n; i++) {
-      for (int j = i; j >= max(0, i - 256); j--) {
+      for (int j = i; j >= max(0, i - 512); j--) {
         if ((a[j] ^ i) < (a[i] ^ j)) {
           dp[i] = max(dp[i], dp[j] + 1);
         }
