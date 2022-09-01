@@ -1,3 +1,4 @@
+
 /**
 *  author:  vishnus
 *  created: 2022-09-01
@@ -7,9 +8,8 @@
 using namespace std;
 
 // Idea: if a 01 or 10 exists in an even position, we must change it since every block must be even-sized.
-// Now the question arises, what to change it to? Well, we can greedily change it to whatever is around it
-// (if it's one number, set it to that. If it's two, set it to anything), so it wouldn't change the final
-// number of subsegments.
+// Now the question arises, what to change it to? Well, we can greedily change it to the value of the next
+// pair for numbers that do not require a change. So, it wouldn't contribute to the answer.
 
 int main() {
 #ifdef ONLINE_JUDGE
