@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Editorial NOT used
 // Idea: just casework. Key observation is that only two number of contiguous values
 // can be different than k, then it's just casework as to what the values can be.
 
