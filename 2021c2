@@ -1,0 +1,83 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+// Idea: https://imgur.com/a/kvjTTRa
+
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  int tt;
+  cin >> tt;
+  while (tt--) {
+    int n, m, q;
+    cin >> n >> m >> q;
+    vector<int> a(n);
+    vector<int> b(m);
+    for (int i = 0; i < n; i++) {
+      int c;
+      cin >> c;
+      --c; // 0-indexed
+      a[c] = i;
+    }
+    for (int i = 0; i < m; i++) {
+      cin >> b[i];
+      --b[i];
+      b[i] = a[b[i]];
+    }
+    map<int, set<int>> idx; // what are the indices of the slides that people k has to do?
+    for (int i = 0; i < m; i++) {
+      idx[b[i]].insert(i);
+    }
+    for (int i = 0; i < n; i++) {
+      idx[i].insert(m + 1); // just add m + 1 to everything anyways
+    }
+    // number of pairs (k, k + 1) being satisfied (where first_idx[k] <= first_idx[k + 1])
+    int counter = 0;
+    for (int i = 0; i < n - 1; i++) {
+      if (*(idx[i].begin()) <= *(idx[i + 1].begin())) {
+        counter++;
+      }
+    }
+    if (counter == n - 1) {
+        cout << "YA\n";
+    } else {
+      cout << "TIDAK\n";
+    }
+    while (q--) {
+      int s, t;
+      cin >> s >> t;
+      --s; --t;
+      t = a[t]; // proper values
+      // uniquely check all pairs
+      set<pair<int, int>> to_check = { {t - 1, t}, {t, t + 1}, {b[s] - 1, b[s]}, {b[s], b[s] + 1} };
+      int prev_ctr = 0;
+      for (auto [f, s] : to_check) {
+        if (f < 0 || s >= n) {
+          continue;
+        }
+        if (*(idx[f].begin()) <= *(idx[s].begin())) {
+          prev_ctr++;
+        }
+      }
+      idx[b[s]].erase(s); // user b[s] does not exist at position s anymore, remove
+      b[s] = t; // set in array to be otherwise
+      idx[t].insert(s); // t now has that new index
+      int new_ctr = 0;
+      for (auto [f, s] : to_check) {
+        if (f < 0 || s >= n) {
+          continue;
+        }
+        if (*(idx[f].begin()) <= *(idx[s].begin())) {
+          new_ctr++;
+        }
+      }
+      counter += new_ctr - prev_ctr;
+      if (counter == n - 1) {
+        cout << "YA\n";
+      } else {
+        cout << "TIDAK\n";
+      }
+    }
+  }
+}
